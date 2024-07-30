@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Meses de "Namoro/Amigos intimos"</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        h1, h2 {
+            font-family: 'Brush Script MT', cursive;
+            color: #ff69b4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        .cat {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+        }
+        .cat1 { background-image: url('https://www.w3schools.com/w3images/cat2.jpg'); }
+        .cat2 { background-image: url('https://www.w3schools.com/w3images/cat1.jpg'); }
+        .cat3 { background-image: url('https://www.w3schools.com/w3images/cat4.jpg'); }
+        .large-text {
+            font-size: 1.5em;
+            line-height: 1.6;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        .cats-container {
+            position: relative;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section active" id="welcomeSection">
+            <h1>Oiii princesa! espero que goste :3</h1>
+            <p>Pra comemora os 7 meses de "Namoro/Amigos intimos". Fiz isso pá você e estou testando minhas habilidades com programação :D</p>
+            <button onclick="nextSection('momentsSection')">Clica aqui :3</button>
+        </div>
+        
+        <div class="section" id="momentsSection">
+            <p>Apesar de eu não ter fotos de nós dois juntos no pc, os momentos estão gravados tudo no meu coração.</p>
+            <button onclick="nextSection('finalSection')">Clica aqui :3</button>
+        </div>
+        
+        <div class="section" id="finalSection">
+            <h2>7 Meses Juntos</h2>
+            <p class="normal-text">
+                Então princesa... esses 7 meses foram os mais especiais da minha vida. Quero que saiba o quanto sou leal e fiel a você. Nosso relacionamento é precioso para mim, e mesmo que passemos por dificuldades, eu quero que saibamos enfrentar tudo juntos e manter nossa relação firme.
+            </p>
+            <p class="normal-text">
+                Peço paciência enquanto continuo aprendendo a cuidar de você. Eu nunca tive um amor tão valioso quanto o nosso e, se as vezes eu pareço grudento ou chato, é porque quero estar perto de você e demonstrar o quanto te amo. Nunca fui assim com ninguém antes e é por isso que tenho esse desejo constante de falar com você.
+            </p>
+            <p class="normal-text">
+                Desculpe se isso parece carência, mas o que sinto por você é tão profundo que não consigo expressar de outra forma. Agradeço por estar ao meu lado e espero que possamos continuar construindo algo lindo e duradouro.
+            </p>
+            <h1>Eu ti amu :3</h1>
+        </div>
+    </div>
+
+    <div class="cats-container">
+        <div class="cat cat1"></div>
+        <div class="cat cat2"></div>
+        <div class="cat cat3"></div>
+    </div>
+
+    <script>
+        function nextSection(sectionId) {
+            document.querySelector('.active').classList.remove('active');
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Função para posicionar gatinhos na tela
+        function positionCats() {
+            const cats = document.querySelectorAll('.cat');
+            cats.forEach(cat => {
+                cat.style.top = `${Math.random() * (window.innerHeight - 100)}px`;
+                cat.style.left = `${Math.random() * (window.innerWidth - 100)}px`;
+            });
+        }
+
+        window.onload = positionCats;
+    </script>
+</body>
+</html>
